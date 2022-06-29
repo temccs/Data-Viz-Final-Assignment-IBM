@@ -218,4 +218,4 @@ def get_graph(chart, year, children1, children2, c3, c4, c5):
 
 # Run the app
 if __name__ == '__main__':
-   app.run(debug=True, host="localhost", port="8054")
+   app.run(debug=True, host="localhost", port="8050")
