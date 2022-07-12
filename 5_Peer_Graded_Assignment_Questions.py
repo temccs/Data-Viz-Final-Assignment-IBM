@@ -1,3 +1,8 @@
+!pip install dash
+!pip install dash==1.19.0!
+!pip install jupyter_dash
+!pip install --upgrade plotly
+
 # Import required libraries
 import pandas as pd
 import dash
@@ -6,11 +11,11 @@ from dash import dcc
 from dash.dependencies import Input, Output, State
 import plotly.graph_objects as go
 import plotly.express as px
-from dash import no_update
+from jupyter_dash import JupyterDash
 
 
 # Create a dash application
-app = dash.Dash(__name__)
+app = JupyterDash(__name__)
 
 # REVIEW1: Clear the layout and do not display exception till callback gets executed
 app.config.suppress_callback_exceptions = True
@@ -218,4 +223,4 @@ def get_graph(chart, year, children1, children2, c3, c4, c5):
 
 # Run the app
 if __name__ == '__main__':
-   app.run(debug=True, host="localhost", port="8050")
+   app.run_server(mode='jupyterlab', port = 8090, dev_tools_ui=True, debug=True,dev_tools_hot_reload =True, threaded=True)
