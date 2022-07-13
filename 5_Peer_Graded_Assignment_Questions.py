@@ -24,7 +24,7 @@ app.config.suppress_callback_exceptions = True
 airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/airline_data.csv', 
                             encoding = "ISO-8859-1",
                             dtype={'Div1Airport': str, 'Div1TailNum': str, 
-                                   'Div2Airport': str, 'Div2TailNum': str, 'Year':str})
+                                   'Div2Airport': str, 'Div2TailNum': str, })
 
 
 # List of years 
@@ -223,4 +223,4 @@ def get_graph(chart, year, children1, children2, c3, c4, c5):
 
 # Run the app
 if __name__ == '__main__':
-   app.run_server(mode='jupyterlab', port = 8090, dev_tools_ui=True, debug=True,dev_tools_hot_reload =True, threaded=True)
+    app.run_server(mode='jupyterlab', port = 8090, dev_tools_ui=True, debug=True,dev_tools_hot_reload =True, threaded=True)
